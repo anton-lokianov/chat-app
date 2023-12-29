@@ -16,4 +16,7 @@ export class RegisterUserDto {
 
   @IsString()
   readonly statusMessage: string;
+
+  @IsString()
+  readonly image: string;
 }

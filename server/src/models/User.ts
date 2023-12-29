@@ -14,6 +14,7 @@ export interface IUser {
   isOnline: boolean;
   lastActivity: Date;
   statusMessage: string;
+  image: string;
 }
 
 export const userSchema = new Schema(
@@ -21,6 +22,7 @@ export const userSchema = new Schema(
     name: String,
     email: { type: String, unique: true },
     password: String,
+    image: String,
     role: {
       type: String,
       enum: ['user', 'admin'],

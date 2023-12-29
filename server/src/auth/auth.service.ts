@@ -15,7 +15,13 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async register({ email, password, name, statusMessage }): Promise<IUser> {
+  async register({
+    email,
+    password,
+    name,
+    statusMessage,
+    image,
+  }): Promise<IUser> {
     const user = await this.userModal.findOne({ email });
     if (user) {
       throw new ConflictException('User already exists');
@@ -25,6 +31,7 @@ export class AuthService {
       email,
       password: hashedPassword,
       name,
+      image,
       statusMessage,
     });
 
