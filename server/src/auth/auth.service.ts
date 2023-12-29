@@ -5,7 +5,9 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
-  constructor(@InjectModel('User') private readonly userModal: typeof User) {}
+  constructor(
+    @InjectModel(User.name) private readonly userModal: typeof User,
+  ) {}
 
   async register({ email, password, name, statusMessage }): Promise<IUser> {
     const user = await this.userModal.findOne({ email });
@@ -23,5 +25,7 @@ export class AuthService {
     return newUser;
   }
 
-  async login({ email, password }): Promise<void> {}
+  async login({ email, password }): Promise<IUser> {
+    return;
+  }
 }

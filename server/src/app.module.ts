@@ -27,7 +27,7 @@ import { AuthModule } from './auth/auth.module';
     FriendsModule,
     AuthModule,
   ],
-  controllers: [AppController, MessagesController, AuthController],
-  providers: [AppService, MessagesService, AuthService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
