@@ -5,11 +5,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {};
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => {
-    return (
-      <input ref={ref} {...props} className={cn(`${className}`)}>
-        Input
-      </input>
-    );
+    return <input ref={ref} {...props} className={cn(`${className}`)} />;
   },
 );
 
