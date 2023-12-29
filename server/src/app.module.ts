@@ -9,13 +9,13 @@ import { MessagesService } from './messages/messages.service';
 import { MessagesModule } from './messages/messages.module';
 import { ChatsModule } from './chats/chats.module';
 import { FriendsModule } from './friends/friends.module';
-import { AuthController } from './auth/auth.controller';
-import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     MongooseModule.forRootAsync({
       useFactory: async () => ({
         uri: process.env.MONGO_URL,
