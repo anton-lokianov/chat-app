@@ -8,6 +8,7 @@ import { MessagesController } from './messages/messages.controller';
 import { MessagesService } from './messages/messages.service';
 import { MessagesModule } from './messages/messages.module';
 import { ChatsModule } from './chats/chats.module';
+import { FriendsModule } from './friends/friends.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ChatsModule } from './chats/chats.module';
     UsersModule,
     MessagesModule,
     ChatsModule,
+    FriendsModule,
   ],
   controllers: [AppController, MessagesController],
   providers: [AppService, MessagesService],
