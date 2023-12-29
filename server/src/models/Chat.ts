@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-interface Chat {
+interface IChat {
   participants: string[];
   createdAt: Date;
   updatedAt: Date;
@@ -12,7 +12,7 @@ interface Chat {
   isGroupChat: boolean;
 }
 
-const ChatSchema = new Schema(
+const chatSchema = new Schema(
   {
     participants: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     messages: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Message' }],
@@ -23,7 +23,7 @@ const ChatSchema = new Schema(
   { timestamps: true },
 );
 
-export const Chat = mongoose.model<Chat & mongoose.Document>(
+export const Chat = mongoose.model<IChat & mongoose.Document>(
   'Chat',
-  ChatSchema,
+  chatSchema,
 );

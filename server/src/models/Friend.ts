@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-export interface Friend {
+export interface IFriend {
   requester: string;
   recipient: string;
   status: string;
@@ -31,7 +31,7 @@ const friendSchema = new Schema(
   { timestamps: true },
 );
 
-export const Friend = mongoose.model<Friend & mongoose.Document>(
+export const Friend = mongoose.model<IFriend & mongoose.Document>(
   'Friend',
   friendSchema,
 );

@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-interface User {
+export interface IUser {
   name: string;
   email: string;
   password: string;
@@ -16,7 +16,7 @@ interface User {
   statusMessage: string;
 }
 
-const userSchema = new Schema(
+export const userSchema = new Schema(
   {
     name: String,
     email: String,
@@ -34,7 +34,7 @@ const userSchema = new Schema(
   { timestamps: true },
 );
 
-export const User = mongoose.model<User & mongoose.Document>(
+export const User = mongoose.model<IUser & mongoose.Document>(
   'User',
   userSchema,
 );

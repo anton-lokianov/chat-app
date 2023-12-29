@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-interface Message {
+interface IMessage {
   chat: string;
   sender: string;
   content: string;
@@ -18,7 +18,7 @@ interface Message {
   ];
 }
 
-const MessageSchema = new Schema(
+const messageSchema = new Schema(
   {
     chat: { type: Schema.Types.ObjectId, ref: 'Chat', required: true },
     sender: { type: Schema.Types.ObjectId, ref: 'User', required: true },
@@ -35,7 +35,7 @@ const MessageSchema = new Schema(
   { timestamps: true },
 );
 
-export const Message = mongoose.model<Message & mongoose.Document>(
+export const Message = mongoose.model<IMessage & mongoose.Document>(
   'Message',
-  MessageSchema,
+  messageSchema,
 );
