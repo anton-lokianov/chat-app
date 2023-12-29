@@ -9,6 +9,9 @@ import { MessagesService } from './messages/messages.service';
 import { MessagesModule } from './messages/messages.module';
 import { ChatsModule } from './chats/chats.module';
 import { FriendsModule } from './friends/friends.module';
+import { AuthController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,8 +25,9 @@ import { FriendsModule } from './friends/friends.module';
     MessagesModule,
     ChatsModule,
     FriendsModule,
+    AuthModule,
   ],
-  controllers: [AppController, MessagesController],
-  providers: [AppService, MessagesService],
+  controllers: [AppController, MessagesController, AuthController],
+  providers: [AppService, MessagesService, AuthService],
 })
 export class AppModule {}
