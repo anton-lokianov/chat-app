@@ -13,7 +13,7 @@
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
       "@services/*": ["src/services/*"],
-      "@types/*": ["src/types/*"]
+      "@lib/*": ["src/lib/*"]
     },
 
     /* Bundler mode */
