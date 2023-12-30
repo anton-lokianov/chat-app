@@ -74,3 +74,15 @@
     @apply bg-slate-900 text-background;
   }
 }
+
+.form::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(circle, #ba36a6, #310063);
+  width: 75%;
+  height: 14rem;
+  border-top-right-radius: 100%;
+}
