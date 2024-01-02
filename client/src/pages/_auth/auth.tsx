@@ -2,7 +2,7 @@ import { SignUpForm } from '@/components/features/SignUpForm';
 import img from '../../assets/auth-bg2.png';
 import { SignInForm } from '@/components/features/SignInForm';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import useWindowWidth from '@/hooks/useWindowWidth';
 
 const Auth = () => {
@@ -12,14 +12,16 @@ const Auth = () => {
 
   const mobileFormVariants = {
     signIn: {
-      x: [140, 0],
+      x: [180, 0],
       opacity: [0, 1],
-      transition: { duration: 0.3 },
+      transition: { duration: 0.4 },
+      scale: [0, 1],
     },
     signUp: {
-      x: [140, 0],
-      transition: { duration: 0.3 },
+      x: [180, 0],
+      transition: { duration: 0.4 },
       opacity: [0, 1],
+      scale: [0, 1],
     },
   };
 
@@ -28,11 +30,13 @@ const Auth = () => {
       x: 0,
       transition: { duration: 0.5 },
       opacity: [0, 1],
+      scale: 1,
     },
     signUp: {
       x: windowWidth * 0.6,
       transition: { duration: 0.5 },
       opacity: [0, 1],
+      scale: 1,
     },
   };
 
