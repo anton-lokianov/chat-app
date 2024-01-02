@@ -10,13 +10,19 @@ import {
   FormMessage,
 } from '../ui/form';
 import { BiLogIn } from 'react-icons/bi';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  signUpFormValidation,
+  SignUpFormValidationType,
+} from './../../validations/signUpFormValidation';
 
 type SignUpFormProps = {
   onToggleAuthMode: () => void;
 };
 
 export const SignUpForm = ({ onToggleAuthMode }: SignUpFormProps) => {
-  const form = useForm({
+  const form = useForm<SignUpFormValidationType>({
+    resolver: zodResolver(signUpFormValidation),
     defaultValues: {
       email: '',
       password: '',
@@ -26,11 +32,13 @@ export const SignUpForm = ({ onToggleAuthMode }: SignUpFormProps) => {
     },
   });
 
+  const onSubmit = (data: SignUpFormValidationType) => {};
+
   return (
     <Form {...form}>
       <form
-        onSubmit={() => {}}
-        className='space-y-6 h-screen w-full relative bg-[#FEFEF8] p-9 rounded-sm shadow-md shadow-black border border-gray-200 singUp_form'
+        onSubmit={form.handleSubmit(onSubmit)}
+        className='space-y-3 h-screen w-full relative bg-[#FEFEF8] p-9 rounded-sm shadow-md shadow-black border border-gray-200 singUp_form'
       >
         <div className='flex justify-center items-center text-slate-800 font-bold text-[1.3rem]'>
           <BiLogIn className='text-[3.5rem] text-[#ba36a6]' />

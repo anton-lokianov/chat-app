@@ -10,23 +10,31 @@ import {
   FormMessage,
 } from '../ui/form';
 import { BiLogIn } from 'react-icons/bi';
+import {
+  signInFormValidation,
+  SignInFormValidationType,
+} from './../../validations/signInFormValidation';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 type SignInFormProps = {
   onToggleAuthMode: () => void;
 };
 
 export const SignInForm = ({ onToggleAuthMode }: SignInFormProps) => {
-  const form = useForm({
+  const form = useForm<SignInFormValidationType>({
+    resolver: zodResolver(signInFormValidation),
     defaultValues: {
       email: '',
       password: '',
     },
   });
 
+  const onSubmit = (data: SignInFormValidationType) => {};
+
   return (
     <Form {...form}>
       <form
-        onSubmit={() => {}}
+        onSubmit={form.handleSubmit(onSubmit)}
         className='space-y-6 h-screen relative w-full bg-[#FEFEF8] p-9 rounded-sm shadow-md shadow-black border border-gray-200 singIn_form'
       >
         <div className='flex justify-center items-center text-slate-800 font-bold text-[1.3rem]'>
