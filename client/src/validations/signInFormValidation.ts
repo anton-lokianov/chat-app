@@ -6,8 +6,8 @@ export const signInFormValidation = z.object({
   }),
   password: z
     .string()
-    .min(3, {
-      message: 'Password must be at least 3 characters long',
+    .min(1, {
+      message: "Password can't be empty",
     })
     .max(20, {
       message: 'Password must be at most 20 characters long',

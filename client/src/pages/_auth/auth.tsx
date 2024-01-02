@@ -60,7 +60,7 @@ const Auth = () => {
       <motion.div
         animate={isSignIn ? 'signIn' : 'signUp'}
         variants={isMobile ? mobileFormVariants : formVariants}
-        className='w-full h-full md:w-2/5 absolute  left-0 flex justify-center items-center'
+        className='w-full h-screen md:w-2/5 flex justify-center items-center'
         initial={false}
       >
         {isSignIn ? (
@@ -74,7 +74,7 @@ const Auth = () => {
         src={img}
         animate={isSignIn ? 'signIn' : 'signUp'}
         variants={imageVariants}
-        className='hidden w-3/5 absolute right-0 h-full md:block'
+        className='hidden w-3/5 h-screen md:block'
         alt='chat-app'
       />
     </div>

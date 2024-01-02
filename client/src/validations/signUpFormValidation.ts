@@ -19,7 +19,7 @@ export const signUpFormValidation = z.object({
     message: 'Status message must be at most 100 characters long',
   }),
 
-  profileImage: z.string().nullable(),
+  profileImage: z.string(),
 });
 
 export type SignUpFormValidationType = z.infer<typeof signUpFormValidation>;
