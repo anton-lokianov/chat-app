@@ -27,7 +27,7 @@ export const SignInForm = ({ onToggleAuthMode }: SignInFormProps) => {
     <Form {...form}>
       <form
         onSubmit={() => {}}
-        className='space-y-6 h-screen relative w-full bg-[#FEFEF8] p-9 rounded-sm shadow-md shadow-black border border-gray-200 form'
+        className='space-y-6 h-screen relative w-full bg-[#FEFEF8] p-9 rounded-sm shadow-md shadow-black border border-gray-200 singIn_form'
       >
         <div className='flex justify-center items-center text-slate-800 font-bold text-[1.3rem]'>
           <BiLogIn className='text-[3.5rem] text-[#ba36a6]' />

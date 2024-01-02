@@ -61,6 +61,7 @@ const Auth = () => {
         animate={isSignIn ? 'signIn' : 'signUp'}
         variants={isMobile ? mobileFormVariants : formVariants}
         className='w-full md:w-2/5 absolute left-0 flex justify-center items-center'
+        initial={false}
       >
         {isSignIn ? (
           <SignInForm onToggleAuthMode={toggleAuthMode} />
