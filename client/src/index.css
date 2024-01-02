@@ -75,26 +75,23 @@
   }
 }
 
-.singIn_form::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-image: radial-gradient(circle, #ba36a6, #310063);
-  width: 75%;
-  height: 35%;
-  border-top-right-radius: 100%;
-}
-
+.singIn_form::after,
 .singUp_form::after {
   content: '';
   display: block;
   position: absolute;
   bottom: 0;
-  right: 0;
   background-image: radial-gradient(circle, #ba36a6, #310063);
   width: 75%;
   height: 35%;
+}
+
+.singIn_form::after {
+  left: 0;
+  border-top-right-radius: 100%;
+}
+
+.singUp_form::after {
+  right: 0;
   border-top-left-radius: 100%;
 }
