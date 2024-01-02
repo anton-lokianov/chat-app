@@ -12,31 +12,27 @@ const Auth = () => {
 
   const mobileFormVariants = {
     signIn: {
-      x: [200, 0],
+      x: [140, 0],
       opacity: [0, 1],
       transition: { duration: 0.3 },
-      scale: [0, 1],
     },
     signUp: {
-      x: [200, 0],
+      x: [140, 0],
       transition: { duration: 0.3 },
       opacity: [0, 1],
-      scale: [0, 1],
     },
   };
 
   const formVariants = {
     signIn: {
       x: 0,
-      transition: { duration: 0.4 },
+      transition: { duration: 0.5 },
       opacity: [0, 1],
-      scale: [0, 1],
     },
     signUp: {
       x: windowWidth * 0.6,
-      transition: { duration: 0.4 },
+      transition: { duration: 0.5 },
       opacity: [0, 1],
-      scale: [0, 1],
     },
   };
 
