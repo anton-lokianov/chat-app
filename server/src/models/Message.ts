@@ -10,12 +10,7 @@ interface IMessage {
   updatedAt: Date;
   deliveredAt: Date;
   readAt: Date;
-  attachments: [
-    {
-      type: string;
-      url: string;
-    },
-  ];
+  attachments: string;
 }
 
 const messageSchema = new Schema(
@@ -25,12 +20,7 @@ const messageSchema = new Schema(
     content: { type: String, required: true },
     deliveredAt: Date,
     readAt: Date,
-    attachments: [
-      {
-        type: { type: String, enum: ['image', 'video', 'audio', 'file'] },
-        url: String,
-      },
-    ],
+    attachments: String,
   },
   { timestamps: true },
 );
