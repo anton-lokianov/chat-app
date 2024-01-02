@@ -14,7 +14,7 @@ export interface IUser {
   isOnline: boolean;
   lastActivity: Date;
   statusMessage: string;
-  image: string;
+  profileImage: string;
 }
 
 export const userSchema = new Schema(
