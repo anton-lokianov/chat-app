@@ -20,7 +20,7 @@ export class AuthService {
     password,
     name,
     statusMessage,
-    image,
+    profileImage,
   }): Promise<IUser> {
     const user = await this.userModal.findOne({ email });
     if (user) {
@@ -31,7 +31,7 @@ export class AuthService {
       email,
       password: hashedPassword,
       name,
-      image,
+      profileImage,
       statusMessage,
     });
 

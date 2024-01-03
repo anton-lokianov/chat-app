@@ -1,4 +1,4 @@
-import { IsEmail, IsString, MinLength, MaxLength,} from 'class-validator';
+import { IsEmail, IsString, MinLength, MaxLength } from 'class-validator';
 
 export class RegisterUserDto {
   @IsString()
@@ -17,4 +17,6 @@ export class RegisterUserDto {
   @IsString()
   readonly statusMessage: string;
 
+  @IsString()
+  readonly profileImage: string;
 }
